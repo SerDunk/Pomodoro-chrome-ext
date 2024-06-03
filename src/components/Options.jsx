@@ -3,6 +3,7 @@ function Options({ timings, onSelect }) {
     return (
       <div
         key={timing.id}
+        className="cursor-pointer"
         onClick={() => {
           onSelect(timing);
         }}
@@ -11,7 +12,7 @@ function Options({ timings, onSelect }) {
       </div>
     );
   });
-  return <div className="flex gap-5">{renderedTimings}</div>;
+  return <div className="flex gap-5 ">{renderedTimings}</div>;
 }
 
 export default Options;

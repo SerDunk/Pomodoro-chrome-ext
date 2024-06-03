@@ -1,12 +1,22 @@
 import Hero from "./components/Hero";
 import Options from "./components/Options";
 import Clock from "./components/Clock";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [selected, setSelected] = useState(null);
   const [time, setTime] = useState(0);
   const [isResting, setIsResting] = useState(false);
+
+  const reqNotif = () => {
+    if (Notification.permission === "default") {
+      Notification.requestPermission();
+    }
+  };
+
+  useEffect(() => {
+    reqNotif();
+  }, []);
 
   const handleSelect = (timing) => {
     setSelected(timing);
