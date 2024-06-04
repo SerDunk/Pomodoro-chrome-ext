@@ -12,7 +12,11 @@ function Options({ timings, onSelect }) {
       </div>
     );
   });
-  return <div className="flex gap-5 ">{renderedTimings}</div>;
+  return (
+    <div className="flex gap-5 justify-center my-4 text-xl">
+      {renderedTimings}
+    </div>
+  );
 }
 
 export default Options;

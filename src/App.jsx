@@ -38,20 +38,22 @@ function App() {
   ];
 
   return (
-    <div className="flex flex-col items-center w-full min-h-screen">
-      <Hero />
-      <Options
-        timings={timings}
-        onSelect={handleSelect}
-        select={selected?.id}
-      />
-      <Clock
-        time={time}
-        setTime={setTime}
-        isResting={isResting}
-        setIsResting={setIsResting}
-        selected={selected}
-      />
+    <div className="flex flex-col items-center justify-center w-full min-h-screen">
+      <div>
+        <Hero />
+        <Options
+          timings={timings}
+          onSelect={handleSelect}
+          select={selected?.id}
+        />
+        <Clock
+          time={time}
+          setTime={setTime}
+          isResting={isResting}
+          setIsResting={setIsResting}
+          selected={selected}
+        />
+      </div>
     </div>
   );
 }

@@ -43,9 +43,9 @@ function Clock({ time, setTime, isResting, setIsResting, selected }) {
     } else {
       setIsPause((prevPause) => !prevPause);
       if (!isPause) {
-        setPausedTime(time); // Store time when pausing
+        setPausedTime(time);
       } else {
-        setTime(pausedTime); // Resume timer from paused time
+        setTime(pausedTime);
       }
     }
   };
@@ -58,10 +58,14 @@ function Clock({ time, setTime, isResting, setIsResting, selected }) {
 
   return (
     <div className="text-center">
-      <div>
-        {isResting ? "Rest" : "Study"} : {formatTime(time)}
-      </div>
-      <button onClick={onStart}>{isPause ? "Pause" : "Start"}</button>
+      <div className="my-4 text-3xl">{formatTime(time)}</div>
+      <div className="text-md">{isResting ? "Rest" : "Study"}</div>
+      <button
+        onClick={onStart}
+        className="text-center justify-center mt-4 text-xl"
+      >
+        {isPause ? "Pause" : "Start"}
+      </button>
     </div>
   );
 }
